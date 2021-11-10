@@ -24,7 +24,7 @@ const App: FC = () => {
 
   const deleteTask = (taskNameToDelete:string): void => {
     setTodoList(todoList.filter((task) => {
-      return task.taskName != taskNameToDelete
+      return task.taskName !== taskNameToDelete
     }))
   }
 
@@ -44,8 +44,8 @@ const App: FC = () => {
         <button onClick={addTask}>Submit</button>
       </div>
       <div className="todoList">
-        {todoList.map((task: ITask) => {
-          return <TodoTask task={task} deleteTask={deleteTask} />;
+        {todoList.map((task: ITask, index: number) => {
+          return <TodoTask key={index} task={task} deleteTask={deleteTask} />;
         })}
       </div>
     </div>

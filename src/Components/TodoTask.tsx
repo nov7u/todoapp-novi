@@ -1,4 +1,4 @@
-import React from "react"; 
+import React, {FC} from "react"; 
 import {ITask} from "../Interface";
 
 interface Props{
@@ -6,7 +6,7 @@ interface Props{
     deleteTask(taskNameToDelete: string): void;
 }
 
-const TodoTask = ({task, deleteTask}: Props) => {
+const TodoTask: FC<Props> = ({task, deleteTask}: Props) => {
     return (
     <div className="task">
         <div className="content">
