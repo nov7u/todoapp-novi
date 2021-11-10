@@ -7,13 +7,18 @@ interface Props{
 }
 
 const TodoTask: FC<Props> = ({task, deleteTask}: Props) => {
+    
+    const deleteClick = () => {
+        deleteTask(task.taskName)
+    }
+    
     return (
     <div className="task">
         <div className="content">
            <span>{task.taskName}</span>
         </div>
         <button 
-        onClick={() => {deleteTask(task.taskName)}}
+        onClick={deleteClick}
         >
         X
         </button>
